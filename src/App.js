@@ -7,6 +7,8 @@ import Navbar from "./components/Navbar";
 import Product from "./pages/Product";
 import Info from "./pages/Info";
 import NotFound from "./pages/NotFound";
+import SearchForm from "./pages/SearchForm";
+import Search from "./pages/Search";
 
 function App() {
     return (
@@ -14,6 +16,7 @@ function App() {
             <h1>React Router</h1>
             <BrowserRouter>
                 <Navbar/>
+                <SearchForm/>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/about" element={<About/>}/>
@@ -23,6 +26,8 @@ function App() {
                     <Route path="/products/:id/info" element={<Info/>}/>
                     {/* 404 Page */}
                     <Route path="*" element={<NotFound/>}/>
+
+                    <Route path="/search" element={<Search/>}/>
                 </Routes>
             </BrowserRouter>
         </div>
