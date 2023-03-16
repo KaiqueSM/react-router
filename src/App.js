@@ -1,6 +1,6 @@
 import './App.css';
 
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom'
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Navbar from "./components/Navbar";
@@ -28,6 +28,9 @@ function App() {
                     <Route path="*" element={<NotFound/>}/>
 
                     <Route path="/search" element={<Search/>}/>
+
+                    {/*  Redirect  */}
+                    <Route path="/company" element={<Navigate to="/about"/>}/>
                 </Routes>
             </BrowserRouter>
         </div>
